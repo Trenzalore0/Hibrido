@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+
+    <table name="hibrido_color_change_buttons" resource="default" engine="innodb" comment="Table comment">
+
+        <column
+            xsi:type="int"
+            name="id"
+            nullable="false"
+            unsigned="false"
+            identity="true" 
+            comment="Value ID"
+        />
+
+        <column
+            xsi:type="smallint"
+            name="store_id"
+            nullable="false"
+            unsigned="false"
+            comment="Store id"
+        />
+
+        <column
+            xsi:type="varchar"
+            name="color"
+            nullable="true"
+            comment="Color of button"
+        />
+
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+
+            <column name="id" />
+    
+        </constraint>
+
+        <constraint xsi:type="unique" referenceId="">
+
+            <column name="store_id" />
+
+        </constraint>
+
+    </table>
+
+</schema>

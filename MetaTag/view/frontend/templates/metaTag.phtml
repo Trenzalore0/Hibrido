@@ -1,0 +1,21 @@
+<?php
+/** @var \Hibrido\MetaTag\Block\Tag $block */
+
+$stores = $block->getStoresArray();
+$allow = $stores['isUsedInMoreStores'];
+$storesArray = $stores['array'];
+
+$cmsPageUrl = $block->getCmsPageUrl();
+
+if ($allow):
+    foreach($storesArray as $storeKey): 
+        $storeLanguage = $block->getCurrentLocale($storeKey);
+        $baseUrl = $block->getBaseUrl($storeKey);
+    
+?>
+        <link rel="alternate" hreflang="<?= $storeLanguage ?>" href="<?= $baseUrl . $cmsPageUrl ?>">
+
+<?php 
+    endforeach;
+endif; 
+?>
